@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -Ap | sort -d | awk '{printf "%s, ", $0}' |sed 's/,$/\n/'
+ls -xamp
