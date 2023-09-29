@@ -1,0 +1,2 @@
+#!/bin/bash
+sudo choown -R vincent:staff .
