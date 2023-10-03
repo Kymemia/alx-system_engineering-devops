@@ -1,2 +1,2 @@
 #!/bin/bash
-tr -t 'Ac' 'ze'
+tr [:alpha:] 'Ac' 'ze'
