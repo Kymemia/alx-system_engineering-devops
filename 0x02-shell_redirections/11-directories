@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -LR | greg ^d |wc -l
+tree | tail -1
