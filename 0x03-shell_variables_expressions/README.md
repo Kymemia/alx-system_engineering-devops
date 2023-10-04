@@ -4,11 +4,12 @@
 3. Script counts the number of directories in the path
 4. Script lists environment variables
 5. Script lists all local variables and environment variables, and functions
-6. Script creates a new local variable
-7. Script creates a new global variable
-8. Script prints the result of the addition of 128 with the value stored in the environment variable, TRUEKNOWLEDGE, followed by a new line
-9. Script prints out the result of POWER divided by DIVIDE, followed by a new line
-10. Script displays the result of BREATH to the power LOVE
-11. Script that converts a number from base 2 to base 10
-12. Script prints all possible combinations of two letters, except oo
-13. Script prints a number with 2 decimal places, followed by a new line. The number will be stored in the environment variable NUM
+Script creates a new local variable
+6. Script creates a new global variable
+7. Script prints the result of the addition of 128 with the value stored in the environment variable, TRUEKNOWLEDGE, followed by a new line
+8. Script prints out the result of POWER divided by DIVIDE, followed by a new line
+9. Script displays the result of BREATH to the power LOVE
+10. Script that converts a number from base 2 to base 10
+11. Script prints all possible combinations of two letters, except oo
+12. Script prints a number with 2 decimal places, followed by a new line. The number will be stored in the environment variable NUM
+
