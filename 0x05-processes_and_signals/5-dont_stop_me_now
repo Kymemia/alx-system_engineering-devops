@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # stops 4-to_infinity_and_beyond
 pid=$(pgrep -f "4-to_infinity_and_beyond")
-[ -n "$id" ] && kill -15 "$id"
+[ -n "$pid" ] && kill -15 "$pid"
