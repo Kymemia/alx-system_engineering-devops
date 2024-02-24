@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Writes, I am alive!, indefinitely to file, /tmp/my_process
+# Pauses for 2 secs between every I am alive! message
+while true
+do
+	echo "I am alive!" >> /tmp/my_process
+	sleep 2
+done
