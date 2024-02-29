@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#
+while [ $# -eq 0 ]
+do
+	echo "Usage: 5-is_the_host_on_the_network {IP_ADDRESS}"
+	exit 1
+done
+ping -c 5 "$1"
