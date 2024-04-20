@@ -1,0 +1,5 @@
+#!/bin/bash
+#uses ssh to connect to server using a private key
+IP_ADDRESS="197.254.50.242"
+
+ssh -i ~/.ssh/school ubuntu@$(echo $IP_ADDRESS)
