@@ -5,14 +5,3 @@ sudo apt-get -y update
 sudo apt-get -y install nginx
 sudo sh -c 'echo "Hello World!" > /var/www/html/index.html'
 sudo service nginx restart
-
-sleep 5
-
-#to check if nginx serves at root
-response=$(curl -s http://localhost/)
-if [[ "$response" == *"Hello World!"* ]]; then
-	echo "Great success"
-else
-	echo "Great successn't"
-	exit 1
-fi
