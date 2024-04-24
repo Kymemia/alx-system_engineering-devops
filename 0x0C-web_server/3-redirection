@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# This script configures my Nginx server 
+# so that /redirect_me is redirecting to another page
+
+sudo apt-get -y update
+sudo apt-get -y install nginx
+
+#create a html page
+echo "Hello World!" | sudo tee /var/www/html/index.html > /dev/null
+
+#configure nginx
+sudo sed -i '24i\	rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4' /etc/nginx/sites-available/default
+
+#restart nginx to apply configuration changes
+sudo service nginx restart
