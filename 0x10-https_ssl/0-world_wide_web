@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+# This script configures my domain zone so that the subdomain www points to my load-balancer IP(lb-01)
+
+check_subdomain() {
+    local domain="$1"
+    local subdomain="$2"
+
+    record_type=$(dig +short -t CNAME "${subdomain}.${domain}" | awk '{print $1}')
+    destination=$(dig +short "${subdomain}.${domain}")
+
+    echo "The subdomain ${subdomain} is a ${record_type} record and points to ${destination}"
+}
+
+main(){
+    local domain="$1"
+    local subdomain="$2"
+
+    if [ -z "$subdomain" ]; then
+	    default_subdomains=("www" "lb-01" "web-01" "web-02")
+	    for sub in "${default_subdomains[@]}"; do
+		    check_subdomain "$domain" "$sub"
+	    done
+    else
+	    check_subdomain "$domain" "$subdomain"
+    fi
+}
+
+# call the main function
+main "$@"
