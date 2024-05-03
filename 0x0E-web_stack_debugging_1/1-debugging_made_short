@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#make the code succint
+ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+sudo service nginx restart
+pkill -o "nginx"
