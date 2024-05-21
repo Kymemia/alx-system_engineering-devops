@@ -10,8 +10,8 @@ import sys
 
 def fetch_user_data(user_id):
     """fetch user data"""
-    response = requests.get
-    (f"https://jsonplaceholder.typicode.com/users/{user_id}")
+    response = requests.get(
+            f"https://jsonplaceholder.typicode.com/users/{user_id}")
     response.raise_for_status()
     return response.json()
 
@@ -27,15 +27,23 @@ def main(user_id):
     """displays TODO list progress"""
     user_data = fetch_user_data(user_id)
     todos_data = fetch_todos()
+
     user_name = user_data["name"]
-    total_tasks = sum(1 for task in todos_data if task["userId"] == user_id)
-    completed_tasks = [task["title"] for task in todos_data
-                       if task["userId"] == user_id and task["completed"]]
+    total_tasks = 0
+    completed_tasks = 0
+    completed_task_titles = []
+
+    for todo in todos_data:
+        if todo["userId"] == user_id:
+            total_tasks += 1
+            if todo["completed"]:
+                completed_tasks += 1
+                completed_task_titles.append(todo["title"])
 
     print(f"Employee {user_name} is done"
-          "with tasks({len(completed_tasks)}/{total_tasks}):")
-    for title in completed_tasks:
-        print("\t ", title)
+          "with tasks({completed_tasks}/{total_tasks}):")
+    for title in completed_task_titles:
+        print(f"\t {title}")
 
 
 if __name__ == "__main__":
