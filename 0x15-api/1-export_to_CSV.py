@@ -35,13 +35,15 @@ def main(user_id):
 
     with open(csv_filename, 'w', newline="") as csvfile:
         csv_writer = csv.writer(csvfile)
-        csv_writer.writerow(["USER_ID", "USERNAME",
-                            "TASK_COMPLETED_STATUS", "TASK_TITLE"])
+        csv_writer.writerow(["USER_ID",
+                             "USERNAME",
+                             "TASK_COMPLETED_STATUS", "TASK_TITLE"
+                             ])
 
         for todo in todos_data:
             if todo["userId"] == user_id:
-                task_completed_status = "Completed" if todo["completed"]
-                                        else "Not Completed"
+                task_completed_status = "Completed" if todo["completed"] \
+                                         else "Not Completed"
                 task_title = todo["title"]
                 csv_writer.writerow([user_id, user_name,
                                     task_completed_status, task_title])
