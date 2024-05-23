@@ -40,7 +40,7 @@ def main(user_id):
                 completed_tasks += 1
                 completed_task_titles.append(todo["title"])
 
-    print(f"Employee {user_name} is done"
+    print(f"Employee {user_name} is done "
           f"with tasks({completed_tasks}/{total_tasks}):")
     for title in completed_task_titles:
         print(f"\t {title}")
