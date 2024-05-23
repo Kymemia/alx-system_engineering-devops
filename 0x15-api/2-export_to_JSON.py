@@ -33,13 +33,12 @@ def main(user_id):
     user_tasks = []
 
     for todo in todos_data:
-        if todo["userId"] == user_id:
-            task_title = todo["title"]
-            task_completed = todo["completed"]
-            user_tasks.append({"task": task_title, "completed": task_completed,
-                               "username": user_username})
+        task_title = todo["title"]
+        task_completed = todo["completed"]
+        user_tasks.append({"task": task_title, "completed": task_completed,
+                           "username": user_username})
 
-    user_data_json = {"USER_ID": user_tasks}
+    user_data_json = {str(user_id): user_tasks}
 
     json_filename = f"{user_id}.json"
     with open(json_filename, "w") as json_file:
