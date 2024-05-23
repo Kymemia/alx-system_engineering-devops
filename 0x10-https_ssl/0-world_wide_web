@@ -16,7 +16,7 @@ main(){
     local subdomain="$2"
 
     if [ -z "$subdomain" ]; then
-	    default_subdomains=("www" "lb-01" "web-01" "web-02")
+	    default_subdomains=("www" "lb-01" "web-01" "web-02") #default subdomains to be queried
 	    for sub in "${default_subdomains[@]}"; do
 		    check_subdomain "$domain" "$sub"
 	    done
