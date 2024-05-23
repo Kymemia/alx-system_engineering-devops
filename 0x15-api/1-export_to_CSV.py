@@ -33,7 +33,7 @@ def main(user_id):
 
     csv_filename = f"{user_id}.csv"
 
-    with open(csv_filename, 'w', newline="") as csvfile:
+    with open(csv_filename, "w", newline="") as csvfile:
         csv_writer = csv.writer(csvfile)
         csv_writer.writerow(["USER_ID",
                              "USERNAME",
